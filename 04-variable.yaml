@@ -1,0 +1,10 @@
+- name: Variable
+  hosts: local
+  vars:
+    Name: Royal
+    Role: Devops Engineer
+    Task: Ansible
+  tasks:
+  - name: variable example
+    ansible.builtin.debug:
+      msg: "Myself {{Name}} , I am {{Role}} , I am Practicing {{Task}}"

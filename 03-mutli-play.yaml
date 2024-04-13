@@ -4,6 +4,7 @@
   - name: task-1 and play-1 
     ansible.builtin.debug:
       msg: "This is task-1 in play-1"
+      
 - name: PLAY-2
   hosts: local 
   tasks:
