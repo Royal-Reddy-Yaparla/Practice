@@ -1,6 +1,6 @@
 - name: loop
   hosts: local 
-
+  become: yes
   tasks:
   - name: loop
     ansible.builtin.package:
