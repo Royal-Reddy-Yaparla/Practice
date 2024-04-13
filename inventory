@@ -1,7 +1,7 @@
 [local]
 localhost
 
-[local.vars]
-Name=Bumrh 
-Role=Bowler
-Task=Bowling
+[local:vars]
+Name="Bumrh" 
+Role="Bowler"
+Task="Bowling"
