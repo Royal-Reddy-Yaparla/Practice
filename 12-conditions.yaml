@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: check roboshop user exists or not
-      ansible.builtin.command: id roboshop
+      ansible.builtin.command: id royal
       register: user #user is a variable name
       ignore_errors: true # ansible will not exit even if it encounters an error
       
@@ -17,5 +17,5 @@
     
     - name: create user
       ansible.builtin.user:
-        name: roboshop
+        name: royal
       when: user.rc != 0 # condition
