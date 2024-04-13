@@ -5,8 +5,8 @@
     Name: Royal
     Role: Devops Engineer
     Task: Ansible
-  vars_files:
-  - variables.yaml
+  # vars_files:
+  # - variables.yaml
   vars_prompt:
     - name: Name
       prompt: Enter you Name 
@@ -28,4 +28,4 @@
 
 # 1. CMD
 # 2. Task
-# 3. 
+# 3. File
