@@ -1,0 +1,15 @@
+# Task level variable
+- name: variable
+  hosts: local
+  vars:
+      Name: Shami 
+      Role: Bowler
+      Task: Cricket
+  tasks:
+  - name: task variable
+    vars:
+      Name: Kohli 
+      Role: Batsmen
+      Task: Cricket
+    ansible.builtin.debug:
+      msg: "Myself {{Name}} , I am {{Role}} , I am Practicing {{Task}}"
