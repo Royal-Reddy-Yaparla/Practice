@@ -4,3 +4,6 @@
   - name: TASK-1 and PLAY-1
     ansible.builtin.debug:
       msg: "This is play-1"
+  - name: TASK-2 and PLAY-2
+    ansible.builtin.debug:
+      msg: "This is play-2"
