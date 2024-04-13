@@ -1,10 +1,6 @@
 # Task level variable
 - name: variable
   hosts: local
-  vars:
-      Name: Shami 
-      Role: Bowler
-      Task: Cricket
   tasks:
   - name: task variable
     vars:
