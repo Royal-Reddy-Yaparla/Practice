@@ -2,6 +2,6 @@
 localhost
 
 [local.vars]
-Name= "Bumrh" 
-Role= "Bowler"
-Task= "Bowling"
+Name=Bumrh 
+Role=Bowler
+Task=Bowling
