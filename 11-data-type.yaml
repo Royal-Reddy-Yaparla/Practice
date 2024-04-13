@@ -1,13 +1,14 @@
 - name: data types in ansible
   hosts: local
-  NAME: Royal
-  ROLES:
-    - DevOps 
-    - AWS
-    - SRE
-    - Architect
-  ADDRESS:
-    city: Hyd
+  vars:
+    NAME: Royal
+    ROLES:
+      - DevOps 
+      - AWS
+      - SRE
+      - Architect
+    ADDRESS:
+      city: Hyd
   tasks:
   - name: key-value
     ansible.builtin.debug:
