@@ -16,6 +16,5 @@
       msg: "status is: {{user.rc}}"
 
   - name: create user
-    ansible.builtin.user:
-      name: roboshop
+    ansible.builtin.command: useradd roboshop
     when: user.rc != "0" #condition
