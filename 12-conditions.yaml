@@ -1,14 +1,15 @@
 # Variables in play level
 - name: condition
   hosts: local
+  become: yes
   tasks:
   - name: check user
     ansible.builtin.command: id roboshop
     register: user 
-  # - name: print output
-  #   ansible.builtin.debug:
-  #     msg: "user {{user.rc}} " 
-  # - name: create user 
-  #   ansible.builtin.user:
-  #     name: roboshop
-  #   when: user.rc != 0
+  - name: print output
+    ansible.builtin.debug:
+      msg: "user {{user.rc}}" 
+  - name: create user 
+    ansible.builtin.user:
+      name: roboshop
+    when: user.rc != 0
