@@ -1,0 +1,20 @@
+- name: data types in ansible
+  hosts: local
+  NAME: Royal
+  ROLES:
+    - DevOps 
+    - AWS
+    - SRE
+    - Architect
+  ADDRESS:
+    city: Hyd
+  tasks:
+  - name: key-value
+    ansible.builtin.debug:
+      msg: "key-value {NAME}"
+  - name: list
+    ansible.builtin.debug:
+      msg: "key-value {ROLES}"
+  - name: maps
+    ansible.builtin.debug:
+      msg: "key-value {ADDRESS}"
