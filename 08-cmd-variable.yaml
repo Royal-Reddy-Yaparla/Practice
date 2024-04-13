@@ -1,7 +1,5 @@
-- name: variable retrive from file
+- name: variable retrive from cmd
   hosts: local
-  vars_files:
-  - variables.yaml
   tasks:
   - name: check variables
     ansible.builtin.debug:
