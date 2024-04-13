@@ -1,15 +1,21 @@
-# Variables in play level
-- name: condition
-  hosts: local
+- name: conditions
+  hosts: localhost
   become: yes
   tasks:
-  - name: check user
+  - name: check roboshop user exists or not
     ansible.builtin.command: id roboshop
-    register: user 
-  - name: print output
+    register: user #user is a variable name
+    ignore_errors: true # ansilbe will not exit even it got error
+  
+  - name: print variable value
     ansible.builtin.debug:
-      msg: "user {{user.rc}}" 
-  - name: create user 
+      msg: "User output is: {{user}}"
+  
+  - name: print exit status or return code
+    ansible.builtin.debug:
+      msg: "status is: {{user.rc}}"
+
+  - name: create user
     ansible.builtin.user:
       name: roboshop
-    when: user.rc != 0
+    when: user.rc != 0 #condition
