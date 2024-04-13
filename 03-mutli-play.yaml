@@ -1,5 +1,5 @@
 - name: multiplay playbook
-  hosts: localhost
+  hosts: local
   tasks:
   - name: TASK-1 and PLAY-1
     ansible.builtin.debug:
