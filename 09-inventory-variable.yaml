@@ -1,0 +1,6 @@
+- name: variable retrive from file
+  hosts: local
+  tasks:
+  - name: check variables
+    ansible.builtin.debug:
+      msg: "Myself {{Name}} , I am {{Role}} , I am Practicing {{Task}}"
