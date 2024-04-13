@@ -1,6 +1,6 @@
 - name: variable retrive from file
   hosts: local
-  var_files:
+  vars_files:
   - variables.yaml
   tasks:
   - name: check variable
