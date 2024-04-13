@@ -7,4 +7,4 @@
     register: user 
   - name: print output
     ansible.builtin.debug:
-      msg: "user {{user}} " 
+      msg: "user {{user.rc}} " 
