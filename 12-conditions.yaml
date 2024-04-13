@@ -5,7 +5,7 @@
     - name: check hari user exist or not
       ansible.builtin.command: id hari 
       register: user 
-      ignore_error: true
+      ignore_errors: true
     
     - name: print user info
       ansible.builtin.debug:
