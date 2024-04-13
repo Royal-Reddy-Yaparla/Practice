@@ -1,10 +1,11 @@
 - name: loop
   hosts: local 
+
   tasks:
   - name: loop
     ansible.builtin.package:
-      name: "{{item}}"
-      state: "{{state}}"
+      name: "{{item.name}}"
+      state: "{{item.state}}"
     loop:
     - {name: 'git',state: 'present'}
     - {name: 'nginx',state: 'present'}
