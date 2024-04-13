@@ -1,9 +1,12 @@
-- name: multiplay playbook
+- name: PLAY-1
   hosts: local
   tasks:
-  - name: TASK-1 and PLAY-1
+  - name: task-1 and play-1 
     ansible.builtin.debug:
-      msg: "This is play-1"
-  - name: TASK-2 and PLAY-2
+      msg: "This is task-1 in play-1"
+- name: PLAY-2
+  host: local 
+  tasks:
+  - name: task-2 and PLAY-2
     ansible.builtin.debug:
-      msg: "This is play-2"
+      msg: "This is task-2 in play-2"
