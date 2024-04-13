@@ -12,10 +12,10 @@
   tasks:
   - name: key-value
     ansible.builtin.debug:
-      msg: "key-value {NAME}"
+      msg: "key-value {{NAME}}"
   - name: list
     ansible.builtin.debug:
-      msg: "key-value {ROLES}"
+      msg: "key-value {{ROLES}}"
   - name: maps
     ansible.builtin.debug:
-      msg: "key-value {ADDRESS}"
+      msg: "key-value {{ADDRESS}}"
