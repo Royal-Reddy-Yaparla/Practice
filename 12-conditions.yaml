@@ -2,20 +2,16 @@
   hosts: localhost
   become: yes
   tasks:
-    - name: check roboshop user exists or not
-      ansible.builtin.command: id royal
-      register: user #user is a variable name
-      ignore_errors: true # ansible will not exit even if it encounters an error
-      
-    - name: print variable value
-      ansible.builtin.debug:
-        msg: "User output is: {{ user.stdout }}"
-      
-    - name: print exit status or return code
-      ansible.builtin.debug:
-        msg: "status is: {{ user.rc }}"
+    - name: check hari user exist or not
+      ansible.builtin.command: id hari 
+      register: user 
+      ignore_error: true
     
-    - name: create user
+    - name: print user info
+      ansible.builtin.debug:
+          msg: "{{user.rc}}"
+    
+    - name: create user if not exist
       ansible.builtin.user:
-        name: royal
-      when: user.rc != 0 # condition
+        name: hari 
+      when: user.rc != 0
