@@ -18,4 +18,6 @@
   - name: create user
     ansible.builtin.user:
       name: roboshop
-    when: user.rc != 0
+      state: absent
+      remove: yes
+    when: user.rc == 0
