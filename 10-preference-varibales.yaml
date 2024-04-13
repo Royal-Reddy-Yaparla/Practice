@@ -7,16 +7,16 @@
     Task: Ansible
   # vars_files:
   # - variables.yaml
-  vars_prompt:
-    - name: Name
-      prompt: Enter you Name 
-      private: false 
-    - name: Role
-      prompt: Enter you Role 
-      private: false
-    - name: Task
-      prompt: Enter you Task 
-      private: false
+  # vars_prompt:
+  #   - name: Name
+  #     prompt: Enter you Name 
+  #     private: false 
+  #   - name: Role
+  #     prompt: Enter you Role 
+  #     private: false
+  #   - name: Task
+  #     prompt: Enter you Task 
+  #     private: false
   tasks:
   - name: variable example
     # vars:
@@ -29,3 +29,4 @@
 # 1. CMD
 # 2. Task
 # 3. File
+# 4. Prompt
