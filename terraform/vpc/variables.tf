@@ -20,6 +20,10 @@ variable "igt_tags" {
   default = {}
 }
 
+variable "nat_gt_tags" {
+  default = {}
+}
+
 variable "public_subnet_tags" {
   default = {}
 }
@@ -35,6 +39,11 @@ variable "database_subnet_tags" {
 variable "public_route_table_tags" {
   default = {}
 }
+
+variable "private_route_table_tags" {
+  default = {}
+}
+
 
 variable "cidr_public" {
   type = list

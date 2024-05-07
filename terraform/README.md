@@ -29,11 +29,11 @@ This Terraform module creates a Virtual Private Cloud (VPC) suitable for a 3-tie
 - ~~Create VPC~~
 - ~~Create Internet gateway and attach to VPC~~
 - ~~Create Subnets~~
-- Create Route tables
-- Create Routes
-- Associate route tables with subnets
-- Create Elastic IP
-- Create NAT gateway in one of public subnet
-- Associate NAT gateway with private subnets
+- ~~Create Route tables~~
+- ~~Create Routes~~
+- ~~Associate route tables with subnets~~
+- ~~Create Elastic IP~~
+- ~~Create NAT gateway in one of public subnet~~
+- ~~Associate NAT gateway with private subnets~~
 - Peering Connection
 - Routes connect between required VPC route tables

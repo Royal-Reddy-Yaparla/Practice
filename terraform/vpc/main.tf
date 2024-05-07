@@ -55,6 +55,35 @@ resource "aws_route_table" "public" {
   )
 }
 
+
+resource "aws_route_table_association" "public_route" {
+  count = length(var.cidr_public)
+  subnet_id      = aws_subnet.public[count.index].id
+  route_table_id = aws_route_table.public.id
+}  
+
+
+resource "aws_eip" "eip" {
+  domain   = "vpc"
+}
+
+resource "aws_nat_gateway" "nat" {
+  allocation_id = aws_eip.eip.id
+  subnet_id     = aws_subnet.public[0].id 
+
+  tags = merge(
+    var.common_tags,
+    var.nat_gt_tags,
+    {
+        Name = "${local.name}-nat-gt"
+   }
+  )
+
+  # To ensure proper ordering, it is recommended to add an explicit dependency
+  # on the Internet Gateway for the VPC.
+  depends_on = [aws_internet_gateway.igt]
+}
+
 resource "aws_subnet" "private" {
     count = length(var.cidr_private)
     vpc_id = aws_vpc.main.id
@@ -84,3 +113,34 @@ resource "aws_subnet" "database" {
    }
   )
 }
+
+resource "aws_route_table" "private" {
+  vpc_id = aws_vpc.main.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_nat_gateway.nat.id
+  }
+
+
+  tags = merge(
+    var.common_tags,
+    var.private_route_table_tags,
+    {
+        Name = "${local.name}-private"
+   }
+  )
+}
+
+resource "aws_route_table_association" "private_route" {
+  count = length(var.cidr_private)
+  subnet_id      = aws_subnet.private[count.index].id
+  route_table_id = aws_route_table.private.id
+}  
+
+
+resource "aws_route_table_association" "database_route" {
+  count = length(var.cidr_database)
+  subnet_id      = aws_subnet.database[count.index].id
+  route_table_id = aws_route_table.private.id
+}  
