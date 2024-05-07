@@ -13,7 +13,9 @@ variable "common_tags" {
 variable "vpc_tags" {
   default = {}
 }
-
+variable "igt_tags" {
+  default = {}
+}
 variable "project_name" {
   default = "robokart"
 }

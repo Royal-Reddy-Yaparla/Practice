@@ -1,6 +1,6 @@
 module "main" {
   # source = "../vpc"
-  source = "git::https://github.com/Royal-Reddy-Yaparla/practice.git?ref=main"
+  source = "git::git@github.com:Royal-Reddy-Yaparla/practice.git?ref=main"
   project_name = var.project_name
   environment = var.environment
   common_tags = var.common_tags

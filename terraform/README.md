@@ -17,23 +17,22 @@ This Terraform module creates a Virtual Private Cloud (VPC) suitable for a 3-tie
 11. Configure routes within the route tables of each VPC to direct traffic through the peering connection as needed.
 
 ## Inputs
+- project_name (required) - project name
+- environment (required) - provide which environment 
+- cidr_block (optional) - by default 10.0.0.0/16
+- common_tags (optional) - better to provide
+- vpc_tags, igt_tags,nat_gt_tags,public_subnet_tags,private_subnet_tags,database_subnet_tags,public_route_table_tags, private_route_table_tags,peering_tags  (optional) - better to provide
+- cidr_public (required) -  User must provide 2 valid public subnets CIDR
 
+- cidr_private (required) -  User must provide 2 valid private subnets CIDR
+
+- cidr_database (required) -  User must provide 2 valid database subnets CIDR
+
+- is_peering_required  (optional) - default false
+- accepters_vpc_id  (optional) - default value is default VPC ID
 
 
 ## outputs
 
-
-
-## rough steps
-
-- ~~Create VPC~~
-- ~~Create Internet gateway and attach to VPC~~
-- ~~Create Subnets~~
-- ~~Create Route tables~~
-- ~~Create Routes~~
-- ~~Associate route tables with subnets~~
-- ~~Create Elastic IP~~
-- ~~Create NAT gateway in one of public subnet~~
-- ~~Associate NAT gateway with private subnets~~
-- ~~Peering Connection~~
-- ~~Routes connect between required VPC route tables~~
+- vpc_id =  VPC id
+- igt_id = internet gateway id
