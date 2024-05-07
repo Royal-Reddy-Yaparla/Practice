@@ -32,3 +32,11 @@ variable "cidr_private" {
 variable "cidr_database" {
   default = ["10.0.21.0/24","10.0.22.0/24"]
 }
+
+variable "is_peering_required" {
+  default = true
+}
+
+variable "accepters_vpc_id" {
+  default = ""
+}
