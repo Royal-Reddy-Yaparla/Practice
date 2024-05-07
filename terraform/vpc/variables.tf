@@ -32,6 +32,10 @@ variable "database_subnet_tags" {
   default = {}
 }
 
+variable "public_route_table_tags" {
+  default = {}
+}
+
 variable "cidr_public" {
   type = list
 }
