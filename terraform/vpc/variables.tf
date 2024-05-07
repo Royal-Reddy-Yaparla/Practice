@@ -24,7 +24,23 @@ variable "public_subnet_tags" {
   default = {}
 }
 
+variable "private_subnet_tags" {
+  default = {}
+}
+
+variable "database_subnet_tags" {
+  default = {}
+}
+
 variable "cidr_public" {
+  type = list
+}
+
+variable "cidr_private" {
+  type = list
+}
+
+variable "cidr_database" {
   type = list
 }
 

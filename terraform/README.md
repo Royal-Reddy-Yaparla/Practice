@@ -28,7 +28,7 @@ This Terraform module creates a Virtual Private Cloud (VPC) suitable for a 3-tie
 
 - ~~Create VPC~~
 - ~~Create Internet gateway and attach to VPC~~
-- Create Subnets
+- ~~Create Subnets~~
 - Create Route tables
 - Create Routes
 - Associate route tables with subnets

@@ -32,8 +32,37 @@ resource "aws_subnet" "public" {
     var.common_tags,
     var.public_subnet_tags,
     {
-        Name = "${local.name}-${local.azs[count.index]}"
+        Name = "${local.name}-public-${local.azs[count.index]}"
    }
   )
-  
+}
+
+resource "aws_subnet" "private" {
+    count = length(var.cidr_private)
+    vpc_id = aws_vpc.main.id
+    cidr_block = var.cidr_private[count.index]
+
+    availability_zone = local.azs[count.index]
+    tags = merge(
+    var.common_tags,
+    var.private_subnet_tags,
+    {
+        Name = "${local.name}-private-${local.azs[count.index]}"
+   }
+  )
+}
+
+resource "aws_subnet" "database" {
+    count = length(var.cidr_database)
+    vpc_id = aws_vpc.main.id
+    cidr_block = var.cidr_database[count.index]
+
+    availability_zone = local.azs[count.index]
+    tags = merge(
+    var.common_tags,
+    var.database_subnet_tags,
+    {
+        Name = "${local.name}-database-${local.azs[count.index]}"
+   }
+  )
 }
