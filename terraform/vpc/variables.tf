@@ -44,6 +44,9 @@ variable "private_route_table_tags" {
   default = {}
 }
 
+variable "peering_tags" {
+  default = {}
+}
 
 variable "cidr_public" {
   type = list
@@ -62,4 +65,12 @@ variable "project_name" {
 }
 variable "environment" {
   type = string
+}
+
+variable "acceptor_vpc_id" {
+  type = string
+}
+
+variable "is_peering_required" {
+  type = bool
 }
